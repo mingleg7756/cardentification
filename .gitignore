@@ -1,0 +1,10 @@
+# Ignore user-specific Xcode files
+*.xcuserdata
+*.xcuserstate
+
+# Ignore build products
+build/
+DerivedData/
+
+# Ignore your API key config file
+Config.xcconfig

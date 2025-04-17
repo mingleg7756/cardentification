@@ -8,7 +8,9 @@ import SwiftUI
 import UIKit
 
 struct ContentView: View {
-    @State private var showCamera = false
+    @State private var showImagePicker = false
+    @State private var selectedSource: UIImagePickerController.SourceType = .photoLibrary
+    @State private var showSourceSelection = false
     @State private var image: UIImage?
     
     var body: some View {
@@ -23,8 +25,8 @@ struct ContentView: View {
                     .foregroundColor(.gray)
             }
             
-            Button("Take a photo") {
-                showCamera = true
+            Button("Select a photo") {
+                showSourceSelection = true
             }
             .font(.title2)
             .padding()
@@ -32,8 +34,31 @@ struct ContentView: View {
             .foregroundColor(.white)
             .cornerRadius(10)
         }
-        .sheet(isPresented: $showCamera) {
-            ImagePicker(sourceType: .camera, selectedImage: $image)
+        Button("Identify Car") {
+            if let image = image {
+                CarNetAPI.identifyCar(image: image) { result in
+                    DispatchQueue.main.async {
+                        print(result)
+                    }
+                }
+            }
+        }
+        .confirmationDialog("Choose Image Source", isPresented: $showSourceSelection) {
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                Button("Take a photo") {
+                    selectedSource = .camera
+                    showImagePicker = true
+                }
+            }
+            Button("Choose from photo library") {
+                selectedSource = .photoLibrary
+                showImagePicker = true
+            }
+            
+            Button("Cancel", role: .cancel) { }
+        }
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(sourceType: selectedSource, selectedImage: $image)
         }
     }
 }

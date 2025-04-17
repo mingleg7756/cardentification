@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6004C3412DB0F7ED00ADD159 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		5D10A5292DAD64E700BD54E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		5D10A51B2DAD64E600BD54E5 /* cardentification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cardentification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D10A5282DAD64E700BD54E5 /* cardentificationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardentificationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D10A5322DAD64E700BD54E5 /* cardentificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardentificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6004C3402DB0F7D900ADD159 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -92,6 +97,7 @@
 				5D10A52B2DAD64E700BD54E5 /* cardentificationTests */,
 				5D10A5352DAD64E700BD54E5 /* cardentificationUITests */,
 				5D10A51C2DAD64E600BD54E5 /* Products */,
+				6004C3402DB0F7D900ADD159 /* Config.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6004C3412DB0F7ED00ADD159 /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +291,7 @@
 /* Begin XCBuildConfiguration section */
 		5D10A53A2DAD64E700BD54E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -348,6 +356,7 @@
 		};
 		5D10A53B2DAD64E700BD54E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -405,6 +414,7 @@
 		};
 		5D10A53D2DAD64E700BD54E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -419,7 +429,11 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
+>>>>>>> anthony
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -435,6 +449,7 @@
 		};
 		5D10A53E2DAD64E700BD54E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -449,7 +464,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,6 +480,7 @@
 		};
 		5D10A5402DAD64E700BD54E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -484,6 +500,7 @@
 		};
 		5D10A5412DAD64E700BD54E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +520,7 @@
 		};
 		5D10A5432DAD64E700BD54E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -520,6 +538,7 @@
 		};
 		5D10A5442DAD64E700BD54E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
