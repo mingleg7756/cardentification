@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6004C3412DB0F7ED00ADD159 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */; };
+		60EB8E672DB1052100CF6B6D /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 60EB8E662DB1051300CF6B6D /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +31,7 @@
 		5D10A51B2DAD64E600BD54E5 /* cardentification.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cardentification.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D10A5282DAD64E700BD54E5 /* cardentificationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardentificationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D10A5322DAD64E700BD54E5 /* cardentificationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cardentificationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6004C3402DB0F7D900ADD159 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		60EB8E662DB1051300CF6B6D /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -93,11 +93,11 @@
 		5D10A5122DAD64E600BD54E5 = {
 			isa = PBXGroup;
 			children = (
+				60EB8E662DB1051300CF6B6D /* Config.xcconfig */,
 				5D10A51D2DAD64E600BD54E5 /* cardentification */,
 				5D10A52B2DAD64E700BD54E5 /* cardentificationTests */,
 				5D10A5352DAD64E700BD54E5 /* cardentificationUITests */,
 				5D10A51C2DAD64E600BD54E5 /* Products */,
-				6004C3402DB0F7D900ADD159 /* Config.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,7 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6004C3412DB0F7ED00ADD159 /* Config.xcconfig in Resources */,
+				60EB8E672DB1052100CF6B6D /* Config.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +291,7 @@
 /* Begin XCBuildConfiguration section */
 		5D10A53A2DAD64E700BD54E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
+			baseConfigurationReference = 60EB8E662DB1051300CF6B6D /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -356,7 +356,7 @@
 		};
 		5D10A53B2DAD64E700BD54E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
+			baseConfigurationReference = 60EB8E662DB1051300CF6B6D /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -414,7 +414,7 @@
 		};
 		5D10A53D2DAD64E700BD54E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
+			baseConfigurationReference = 60EB8E662DB1051300CF6B6D /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -445,7 +445,7 @@
 		};
 		5D10A53E2DAD64E700BD54E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
+			baseConfigurationReference = 60EB8E662DB1051300CF6B6D /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -476,7 +476,7 @@
 		};
 		5D10A5402DAD64E700BD54E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
+			baseConfigurationReference = 60EB8E662DB1051300CF6B6D /* Config.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -496,7 +496,7 @@
 		};
 		5D10A5412DAD64E700BD54E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
+			baseConfigurationReference = 60EB8E662DB1051300CF6B6D /* Config.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -516,7 +516,7 @@
 		};
 		5D10A5432DAD64E700BD54E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
+			baseConfigurationReference = 60EB8E662DB1051300CF6B6D /* Config.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -534,7 +534,7 @@
 		};
 		5D10A5442DAD64E700BD54E5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6004C3402DB0F7D900ADD159 /* Config.xcconfig */;
+			baseConfigurationReference = 60EB8E662DB1051300CF6B6D /* Config.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
