@@ -1,8 +1,0 @@
-//
-//  Config.xcconfig
-//  cardentification
-//
-//  Created by Anthony Jerez on 4/17/25.
-//
-
-CARNET_API_KEY = 256fe4f3-c52b-415c-a9ee-3a5de6431f10
