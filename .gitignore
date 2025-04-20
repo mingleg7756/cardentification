@@ -8,3 +8,5 @@ DerivedData/
 
 # Ignore your API key config file
 Config.xcconfig
+
+cardentification/GoogleService-Info.plist
