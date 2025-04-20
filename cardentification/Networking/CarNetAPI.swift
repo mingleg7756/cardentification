@@ -58,9 +58,10 @@ struct CarNetAPI {
                            let topMatch = mmg.max(by: { ($0["probability"] as? Double ?? 0.0) < ($1["probability"] as? Double ?? 0.0) }),
                            let make = topMatch["make_name"] as? String,
                            let model = topMatch["model_name"] as? String,
-                           let probability = topMatch["probability"],
+                           let probability = topMatch["probability"] as? Double,
                            let years = topMatch["years"] as? String {
-                            completion("\(make) \(model) (\(years)), Probability: \(probability)")
+                            let resultString = "\(make), \(model), \(years), \(probability)"
+                            completion(resultString)
                             return
                         }
                     }
