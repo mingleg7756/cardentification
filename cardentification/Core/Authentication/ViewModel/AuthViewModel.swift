@@ -18,6 +18,7 @@ protocol AuthenticationFormProtocol {
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
     @Published var currentUser: User?
+    @Published var currentPhotoCollection: [CarPhoto] = []
     
     init() {
         self.userSession = Auth.auth().currentUser
@@ -89,6 +90,7 @@ class AuthViewModel: ObservableObject {
             try await user.delete()
             self.userSession = nil
             self.currentUser = nil
+            self.currentPhotoCollection = []
             
             print("Successfully deleted user and all associated data.")
         } catch {
@@ -96,12 +98,31 @@ class AuthViewModel: ObservableObject {
         }
     }
 
-    
     func fetchUser() async {
-        guard let uid = Auth.auth().currentUser?.uid else { return }
-        guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }
-        self.currentUser = try? snapshot.data(as: User.self)
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        let userDoc = Firestore.firestore().collection("users").document(uid)
+        
+        do {
+            let snapshot = try await userDoc.getDocument()
+            
+            if !snapshot.exists {
+                await MainActor.run {
+                    self.signOut()
+                }
+                return
+            }
+            
+            self.currentUser = try snapshot.data(as: User.self)
+            
+        } catch {
+            print("Error fetching user: \(error.localizedDescription)")
+        }
     }
+
+
     
     func savePhoto(imageURLString: String, make: String, model: String, probability: Double, years: String, hash: String) async {
         guard let uid = userSession?.uid else { return }
@@ -146,7 +167,23 @@ class AuthViewModel: ObservableObject {
             return false
         }
     }
-
-
+    
+    func fetchPhotoCollection() async {
+        guard let uid = userSession?.uid else { return }
+        do {
+            let snapshot = try await Firestore.firestore()
+                .collection("users")
+                .document(uid)
+                .collection("photos")
+                .order(by: "selectedOn", descending: true)
+                .getDocuments()
+            
+            self.currentPhotoCollection = try snapshot.documents.compactMap {
+                try $0.data(as: CarPhoto.self)
+            }
+        } catch {
+            print("Failed to fetch photo collection: \(error.localizedDescription)")
+        }
+    }
 
 }
