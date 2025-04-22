@@ -10,3 +10,5 @@ DerivedData/
 Config.xcconfig
 
 cardentification/GoogleService-Info.plist
+
+.DS_Store

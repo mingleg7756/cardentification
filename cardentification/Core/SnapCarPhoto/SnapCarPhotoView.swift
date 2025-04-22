@@ -51,10 +51,7 @@ struct SnapCarPhotoView: View {
                                     let make = String(details[0])
                                     let model = String(details[1])
                                     let years = String(details[2])
-                                    let rawProbability = String(details[3])
-                                    let cleanProbability = rawProbability.trimmingCharacters(in: .whitespacesAndNewlines)
-                                    let probability = Double(cleanProbability) ?? 0.0
-                                    
+                                    let probability = Double(details[3]) ?? 0.0
                                     if let hash = ImageHasher.hashImage(image) {
                                         Task {
                                             let isDuplicate = await viewModel.checkForDuplicatePhotoHash(hash)
@@ -90,8 +87,6 @@ struct SnapCarPhotoView: View {
                         }
                     }
                 }
-
-
                 
             }
             .confirmationDialog("Choose Image Source", isPresented: $showSourceSelection) {
