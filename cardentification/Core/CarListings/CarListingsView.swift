@@ -19,31 +19,33 @@ struct CarListingsView: View {
                     .fontWeight(.bold)
                     .padding(.horizontal)
                     .padding(.top)
-
-                if isLoading {
-                    ProgressView("Loading car listings...")
-                        .progressViewStyle(CircularProgressViewStyle())
-                        .padding()
+                if !isLoading && viewModel.currentPhotoCollection.isEmpty {
+                    VStack(spacing: 8) {
+                        Text("No car listings yet.")
+                            .font(.headline)
+                            .foregroundColor(.gray)
+                        Text("Start taking photos of cars to get started!")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .padding()
                 } else {
-                    if viewModel.currentPhotoCollection.isEmpty {
-                        VStack(spacing: 8) {
-                            Text("No car listings yet.")
-                                .font(.headline)
-                                .foregroundColor(.gray)
-                            Text("Start taking photos of cars to get started!")
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                        }
-                        .padding()
-                    } else {
-                        LazyVStack(spacing: 32) {
-                            ForEach(viewModel.currentPhotoCollection) { photo in
-                                ListingItemView(carPhoto: photo)
-                                    .padding()
-                            }
+                    LazyVStack(spacing: 32) {
+                        ForEach(viewModel.currentPhotoCollection) { photo in
+                            ListingItemView(carPhoto: photo)
+                                .padding()
                         }
                     }
                 }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .overlay {
+            if isLoading {
+                ProgressView("Loading car listings…")
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .padding()
             }
         }
         .onAppear {
