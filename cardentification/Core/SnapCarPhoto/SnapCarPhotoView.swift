@@ -47,11 +47,12 @@ struct SnapCarPhotoView: View {
                                 print("Car identification failed: \(result)")
                             } else {
                                 let details = result.split(separator: ",")
-                                if details.count == 4 {
+                                if details.count == 5 {
                                     let make = String(details[0])
                                     let model = String(details[1])
-                                    let years = String(details[2])
-                                    let probability = Double(details[3]) ?? 0.0
+                                    let generation = String(details[2])
+                                    let years = String(details[3])
+                                    let probability = Double(details[4]) ?? 0.0
                                     if let hash = ImageHasher.hashImage(image) {
                                         Task {
                                             let isDuplicate = await viewModel.checkForDuplicatePhotoHash(hash)
@@ -67,6 +68,7 @@ struct SnapCarPhotoView: View {
                                                                 make: make,
                                                                 model: model,
                                                                 probability: probability,
+                                                                generation: generation,
                                                                 years: years,
                                                                 hash: hash
                                                             )

@@ -59,8 +59,9 @@ struct CarNetAPI {
                            let make = topMatch["make_name"] as? String,
                            let model = topMatch["model_name"] as? String,
                            let probability = topMatch["probability"] as? Double,
+                           let generation = topMatch["generation_name"] as? String,
                            let years = topMatch["years"] as? String {
-                            let resultString = "\(make),\(model),\(years),\(probability)"
+                            let resultString = "\(make),\(model),\(generation),\(years),\(probability)"
                             completion(resultString)
                             return
                         }

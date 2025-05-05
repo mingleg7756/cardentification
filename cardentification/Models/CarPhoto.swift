@@ -13,6 +13,7 @@ struct CarPhoto: Codable, Identifiable {
     let make: String
     let model: String
     let probability: Double
+    let generation: String
     let years: String
     var selectedOn: Date
     let hash: String
