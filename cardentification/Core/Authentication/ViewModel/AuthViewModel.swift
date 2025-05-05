@@ -55,6 +55,7 @@ class AuthViewModel: ObservableObject {
             try Auth.auth().signOut()
             self.userSession = nil
             self.currentUser = nil
+            self.currentPhotoCollection = []
         } catch {
             print("Failed to sign out with error \(error.localizedDescription)")
         }
@@ -124,13 +125,14 @@ class AuthViewModel: ObservableObject {
 
 
     
-    func savePhoto(imageURLString: String, make: String, model: String, probability: Double, years: String, hash: String) async {
+    func savePhoto(imageURLString: String, make: String, model: String, probability: Double, generation: String, years: String, hash: String) async {
         guard let uid = userSession?.uid else { return }
         let photo = CarPhoto(
             imageURLString: imageURLString,
             make: make,
             model: model,
             probability: probability,
+            generation: generation,
             years: years,
             selectedOn: Date(),
             hash: hash
