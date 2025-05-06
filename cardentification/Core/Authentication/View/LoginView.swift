@@ -11,72 +11,79 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     @EnvironmentObject var viewModel: AuthViewModel
-    
+
     var body: some View {
         NavigationStack {
-            VStack {
-                // form fields
-                
-                VStack (spacing: 24){
-                    InputView(text: $email, title: "Email Address", placeholder: "example@gmail.com")
-                        .autocapitalization(.none)
-                    
-                    InputView(text: $password, title: "Password", placeholder: "Enter password", isSecureField: true)
-                }
-                .padding(.horizontal)
-                .padding(.top, 300)
-                
-                // sign in
-                
-                Button {
-                    Task {
-                        try await viewModel.signIn(withEmail: email, password: password)
+            ZStack {
+                // Background image
+                Image("steering")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .ignoresSafeArea()
+
+                VStack {
+                    VStack(alignment: .leading, spacing: 12) {
+                        InputView(text: $email, title: "Email Address", placeholder: "example@gmail.com")
+                            .autocapitalization(.none)
+
+                        InputView(text: $password, title: "Password", placeholder: "Enter password", isSecureField: true)
+
+                        Button {
+                            Task {
+                                try await viewModel.signIn(withEmail: email, password: password)
+                            }
+                        } label: {
+                            HStack {
+                                Text("SIGN IN")
+                                    .fontWeight(.semibold)
+                                Image(systemName: "arrow.right")
+                            }
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity, minHeight: 44)
+                        }
+                        .background(Color.red)
+                        .cornerRadius(10)
+
+                        NavigationLink {
+                            RegistrationView()
+                                .navigationBarBackButtonHidden(true)
+                        } label: {
+                            HStack(spacing: 3) {
+                                Text("Don't have an account?")
+                                Text("Sign up")
+                                    .fontWeight(.bold)
+                            }
+                            .font(.system(size: 14))
+                            .foregroundColor(.red)
+                        }
                     }
-                } label: {
-                    HStack {
-                        Text("SIGN IN")
-                            .fontWeight(.semibold)
-                        Image(systemName: "arrow.right")
-                    }
-                    .foregroundColor(.white)
-                    .frame(width: UIScreen.main.bounds.width - 32, height: 40)
+                    .padding(20)
+                    .background(Color.white.opacity(0.85))
+                    .cornerRadius(20)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.red, lineWidth: 1.5)
+                    )
+                    .frame(maxWidth: 350)
                 }
-                .background(Color(.systemBlue))
-                .disabled(!formIsValid)
-                .opacity(formIsValid ? 1.0 : 0.5)
-                .cornerRadius(10)
-                .padding(.top, 24)
-                
-                Spacer()
-                
-                // sign up
-                
-                NavigationLink {
-                    RegistrationView()
-                        .navigationBarBackButtonHidden(true)
-                } label: {
-                    HStack(spacing: 3) {
-                        Text("Don't have an account?")
-                        Text("Sign up")
-                            .fontWeight(.bold)
-                    }
-                    .font(.system(size: 14))
-                }
-                
+                .frame(maxHeight: .infinity)
             }
         }
     }
 }
 
+// MARK: - Validation
 extension LoginView: AuthenticationFormProtocol {
     var formIsValid: Bool {
-        return !email.isEmpty
-        && email.contains("@")
-        && !password.isEmpty
-        && password.count > 5
+        return !email.isEmpty &&
+               email.contains("@") &&
+               !password.isEmpty &&
+               password.count > 5
     }
 }
 
+// MARK: - Preview
 #Preview {
     LoginView()
+        .environmentObject(AuthViewModel())
 }
