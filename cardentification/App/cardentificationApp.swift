@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct cardentificationApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var viewModel = AuthViewModel()
     
     init() {

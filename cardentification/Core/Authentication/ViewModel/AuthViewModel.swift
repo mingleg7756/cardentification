@@ -9,6 +9,8 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 import FirebaseStorage
+import GoogleSignIn
+import FirebaseCore
 
 protocol AuthenticationFormProtocol {
     var formIsValid: Bool { get }
@@ -53,6 +55,7 @@ class AuthViewModel: ObservableObject {
     func signOut() {
         do {
             try Auth.auth().signOut()
+            signOutGoogle()
             self.userSession = nil
             self.currentUser = nil
             self.currentPhotoCollection = []
@@ -188,4 +191,42 @@ class AuthViewModel: ObservableObject {
         }
     }
 
+}
+
+extension AuthViewModel {
+    // Google sign-in
+    func signInWithGoogle() async {
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let rootVC = windowScene.keyWindow?.rootViewController else { return }
+        do {
+            let result = try await GIDSignIn.sharedInstance.signIn(withPresenting: rootVC)
+            let user   = result.user
+            guard let idToken = user.idToken?.tokenString else { return }
+            let accessToken = user.accessToken.tokenString
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
+            let authResult = try await Auth.auth().signIn(with: credential)
+            self.userSession = authResult.user
+            if authResult.additionalUserInfo?.isNewUser == true {
+                let newUser = User(id: authResult.user.uid,
+                                   fullName: authResult.user.displayName ?? "No Name",
+                                   email: authResult.user.email ?? "No E-mail")
+                let encoded = try Firestore.Encoder().encode(newUser)
+                try await Firestore.firestore()
+                     .collection("users")
+                     .document(newUser.id)
+                     .setData(encoded)
+            }
+            await fetchUser()
+        } catch {
+            print("Google sign-in failed:", error.localizedDescription)
+        }
+    }
+
+    // Google sign out
+    func signOutGoogle() {
+        GIDSignIn.sharedInstance.signOut()
+    }
 }

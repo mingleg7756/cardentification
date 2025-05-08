@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GoogleSignInSwift
 
 struct LoginView: View {
     @State private var email = ""
@@ -60,7 +61,13 @@ struct LoginView: View {
                             }
                             Spacer()
                         }
-
+                        GoogleSignInButton() {
+                            Task {
+                                await viewModel.signInWithGoogle()
+                            }
+                        }
+                        .padding(.top, 12)
+                        .shadow(radius: 4)
                     }
                     .padding(20)
                     .background(Color.white.opacity(0.85))

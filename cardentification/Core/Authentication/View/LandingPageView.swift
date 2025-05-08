@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct LandingPageView: View {
-    @EnvironmentObject var viewModel: AuthViewModel
-
     @State private var showCar = false
     @State private var showFlag = false
     @State private var showTitle = false
@@ -116,17 +114,8 @@ struct LandingPageView: View {
                 bounce = true
             }
             .navigationDestination(isPresented: $navigateToLogin) {
-                Group {
-                    if viewModel.userSession != nil {
-                        MainTabView()
-                        .navigationBarBackButtonHidden(true)
-                    } else {
-                        LoginView()
-                        .navigationBarBackButtonHidden(true)
-                        
-                    }
-                    
-                }
+                LoginView()
+                    .navigationBarBackButtonHidden(true)
             }
         }
     }

@@ -35,6 +35,15 @@ struct ProfileView: View {
                         }
                     }
                 }
+                Section("General") {
+                    HStack {
+                        SettingsRowView(imageName: "gear", title: "Version", tintColor: Color(.systemGray))
+                        Spacer()
+                        Text("1.0.0")
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                    }
+                }
                 
                 Section("Account") {
                     Button {

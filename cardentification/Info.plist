@@ -8,5 +8,18 @@
 	<string>We need camera access to take photos.</string>
     <key>CARNET_API_KEY</key>
     <string>$(CARNET_API_KEY)</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.googleusercontent.apps.299567035289-aav6sdt7hgcsqk6269g76o608e50gogs</string>
+        </array>
+      </dict>
+    </array>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>google</string>
+    </array>
 </dict>
 </plist>
