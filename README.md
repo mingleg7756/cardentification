@@ -36,7 +36,7 @@ Car IQ is an iOS application that leverages deep learning and computer vision to
 - 🔍 **Car Recognition (Deep Learning and Computer Vision)**: CarNET API is used to return:
   - Car **make**
   - Car **model**
-  - **Generation** and **facelift**
+  - Car **generation**
   - Approximate **production years**
   - **Confidence score**
 - 🛒 **Smart Marketplace Integration**: After identifying a car, users can browse similar cars for sale in their area with one tap.
