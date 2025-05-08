@@ -20,7 +20,7 @@ Car IQ is an iOS mobile application that uses AI and computer vision to detect a
 
 It also offers features like Firebase authentication, cloud image storage, and a direct link to search similar cars for sale. CarIQ uses the CarNET API to perform vehicle identification by uploading images to the API and retrieving structured car information.
 
----
+In addition to car recognition, the app includes a feed-style UI for browsing previously identified vehicles and a marketplace integration feature that connects users to car listings in their local area, helping them find great deals on similar vehicles.
 
 ## 🚀 Built With
 
@@ -34,19 +34,20 @@ It also offers features like Firebase authentication, cloud image storage, and a
 
 ---
 
-## 📂 Project Structure
+## 📱 Features
 
-```
-cardentification/
-├── Core/
-│   ├── CarListings/       # Views for displaying car listings
-│   ├── MainTabBar/        # SwiftUI main tab view
-│   ├── Profile/           # Profile interface
-│   └── SnapCarPhoto/      # Camera interface for snapping photos
-├── Config.xconfig         # App configuration settings (update with your own)
-├── Info.plist             # App metadata and permissions
-├── GoogleService-Info.plist # Firebase configuration
-```
+- 📸 **Snap or Upload Car Photo**: Users can take a picture or upload an image of any car.
+- 🔍 **AI Car Recognition**: CarNET API is used to return:
+  - Car **brand**
+  - Car **model**
+  - **Generation** and **facelift**
+  - Approximate **production years**
+  - **Confidence score**
+- 🛒 **Smart Marketplace Integration**: After identifying a car, users can browse similar cars for sale in their area with one tap.
+- 🗃️ **Feed-Style Listings UI**: Car listings are shown in a sleek, scrollable feed layout, allowing users to browse previously scanned or saved vehicles effortlessly.
+- 👤 **User Authentication**: Secure login and account management using Firebase Auth.
+- ☁️ **Cloud Storage**: Stores uploaded photos and metadata in Firebase.
+- 📅 **Timestamping**: Each entry is timestamped for record-keeping.
 
 ---
 
@@ -83,7 +84,7 @@ open cardentification.xcodeproj
 
 ---
 
-## 👥 Team & Acknowledgments
+## 👥 Team
 
 ### Team Members
 
@@ -92,11 +93,5 @@ open cardentification.xcodeproj
 - Anas
 - Robert
 - Ye Htut
-
-### Special Thanks
-
-- **CUNY Tech Prep Instructors** for their guidance and support
-- **CarNET API** for enabling AI-based car identification
-- **Firebase** for robust backend infrastructure
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
