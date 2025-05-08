@@ -78,6 +78,7 @@ struct RegistrationView: View {
                                     .fontWeight(.bold)
                             }
                             .font(.system(size: 14))
+                            .foregroundColor(.red)
                         }
                         .padding(.top, 10)
                     }

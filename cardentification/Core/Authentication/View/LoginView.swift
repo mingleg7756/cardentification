@@ -44,18 +44,23 @@ struct LoginView: View {
                         .background(Color.red)
                         .cornerRadius(10)
 
-                        NavigationLink {
-                            RegistrationView()
-                                .navigationBarBackButtonHidden(true)
-                        } label: {
-                            HStack(spacing: 3) {
-                                Text("Don't have an account?")
-                                Text("Sign up")
-                                    .fontWeight(.bold)
+                        HStack {
+                            Spacer()
+                            NavigationLink {
+                                RegistrationView()
+                                    .navigationBarBackButtonHidden(true)
+                            } label: {
+                                HStack(spacing: 3) {
+                                    Text("Don't have an account?")
+                                    Text("Sign up")
+                                        .fontWeight(.bold)
+                                }
+                                .font(.system(size: 14))
+                                .foregroundColor(.red)
                             }
-                            .font(.system(size: 14))
-                            .foregroundColor(.red)
+                            Spacer()
                         }
+
                     }
                     .padding(20)
                     .background(Color.white.opacity(0.85))
