@@ -6,21 +6,17 @@
 <!-- Add sample image here -->
   <img src="./sample_imgs/car_sample1.png" alt="Car IQ Sample" width="300"/>
   <h3 align="center">AI-powered Car Recognition App</h3>
-  <p align="center">Snap or upload a photo of a car to identify its brand, model, generation, and year with high accuracy.</p>
+  <p align="center">Snap or upload a photo of a car to identify its make, model, generation, and year with high accuracy.</p>
 </div>
 
 ## 🔎 About The Project
 
-Car IQ is an iOS mobile application that uses AI and computer vision to detect and recognize cars from images. The user can take a picture of a car or upload one from their gallery, and the app will identify key attributes such as:
+Car IQ is an iOS application that leverages deep learning and computer vision to detect and recognize cars from images. The user can take a picture of a car or upload one from their gallery, and the app will identify key attributes such as:
 
-- 🚗 Car Brand (e.g. Nissan)
+- 🚗 Make (e.g. Nissan)
 - 🏷️ Model (e.g. GT-R)
 - 🕓 Generation and Year Range (e.g. I (R35) facelift 3, 2016–2023)
 - ✅ Confidence Score (e.g. 96%)
-
-It also offers features like Firebase authentication, cloud image storage, and a direct link to search similar cars for sale. CarIQ uses the CarNET API to perform vehicle identification by uploading images to the API and retrieving structured car information.
-
-In addition to car recognition, the app includes a feed-style UI for browsing previously identified vehicles and a marketplace integration feature that connects users to car listings in their local area, helping them find great deals on similar vehicles.
 
 ## 🚀 Built With
 
@@ -37,8 +33,8 @@ In addition to car recognition, the app includes a feed-style UI for browsing pr
 ## 📱 Features
 
 - 📸 **Snap or Upload Car Photo**: Users can take a picture or upload an image of any car.
-- 🔍 **AI Car Recognition**: CarNET API is used to return:
-  - Car **brand**
+- 🔍 **Car Recognition (Deep Learning and Computer Vision)**: CarNET API is used to return:
+  - Car **make**
   - Car **model**
   - **Generation** and **facelift**
   - Approximate **production years**
