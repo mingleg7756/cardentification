@@ -87,7 +87,6 @@ open cardentification.xcodeproj
 - Ming
 - Anthony
 - Anas
-- Robert
 - Ye Htut
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
