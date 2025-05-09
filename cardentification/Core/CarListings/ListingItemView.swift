@@ -10,9 +10,9 @@ import SwiftUI
 struct ListingItemView: View {
     let carPhoto: CarPhoto
     // Computed property to generate car search URL to access car marketplace
-    private var carSearchURL: URL? {
-        _ = "\(carPhoto.make)+\(carPhoto.model)+\(carPhoto.years)".replacingOccurrences(of: " ", with: "+")
-        return URL(string: "https://www.cars.com/shopping/results/?stock_type=all&makes[]=\(carPhoto.make.lowercased())&models[]=\(carPhoto.model.lowercased())&years[]=\(carPhoto.years)")
+   private var carSearchURL: URL? {
+        let searchQuery = "\(carPhoto.make)+\(carPhoto.model)+\(carPhoto.years)".replacingOccurrences(of: " ", with: "+")
+        return URL(string: "https://www.autotrader.com/cars-for-sale/all-cars/\(carPhoto.make.lowercased())/\(carPhoto.model.lowercased())/\(carPhoto.years.components(separatedBy: "-").first ?? "")")
     }
     
     // shows 'generation' alone unless it's equal to 'years'
