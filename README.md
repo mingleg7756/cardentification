@@ -88,5 +88,6 @@ open cardentification.xcodeproj
 - Anthony
 - Anas
 - Ye Htut
+- Robert Neagu (Project Presenter)
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
