@@ -2,21 +2,14 @@
 
 # 🚘 Car IQ
 
-<div align="center">
-<!-- Add sample image here -->
-  <img src="./sample_imgs/car_sample1.png" alt="Car IQ Sample" width="300"/>
-  <h3 align="center">AI-powered Car Recognition App</h3>
-  <p align="center">Snap or upload a photo of a car to identify its make, model, generation, and year with high accuracy.</p>
-</div>
-
-## 🔎 About The Project
+## 🔎 Description
 
 Car IQ is an iOS application that leverages deep learning and computer vision to detect and recognize cars from images. The user can take a picture of a car or upload one from their gallery, and the app will identify key attributes such as:
 
-- 🚗 Make (e.g. Nissan)
-- 🏷️ Model (e.g. GT-R)
-- 🕓 Generation and Year Range (e.g. I (R35) facelift 3, 2016–2023)
-- ✅ Confidence Score (e.g. 96%)
+- 🚗 Make
+- 🏷️ Model
+- 🕓 Generation and Year Range
+- ✅ Confidence Score
 
 ## 🚀 Built With
 
@@ -44,6 +37,10 @@ Car IQ is an iOS application that leverages deep learning and computer vision to
 - 👤 **User Authentication**: Secure login and account management using Firebase Auth.
 - ☁️ **Cloud Storage**: Stores uploaded photos and metadata in Firebase.
 - 📅 **Timestamping**: Each entry is timestamped for record-keeping.
+
+---
+## Video Demo
+[![Watch the full video demo here](https://img.youtube.com/vi/FO2DtNC0GVs/0.jpg)](https://youtube.com/shorts/FO2DtNC0GVs?feature=share)
 
 ---
 
