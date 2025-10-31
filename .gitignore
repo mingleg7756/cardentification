@@ -14,3 +14,8 @@ cardentification/GoogleService-Info.plist
 .DS_Store
 *.xcuserstate
 **/*.xcuserdatad/
+# Xcode
+xcuserdata/
+*.xcuserstate
+DerivedData/
+.DS_Store
