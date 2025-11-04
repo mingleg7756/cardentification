@@ -40,7 +40,7 @@ Car IQ is an iOS application that leverages deep learning and computer vision to
 
 ---
 ## Video Demo
-[![Watch the full video demo here](https://img.youtube.com/vi/FO2DtNC0GVs/0.jpg)](https://youtube.com/shorts/FO2DtNC0GVs?feature=share)
+[![Watch the full video demo here](https://img.youtube.com/vi/lxtj0gMUb-Y/0.jpg)](https://youtube.com/shorts/lxtj0gMUb-Y?feature=share)
 
 ---
 
